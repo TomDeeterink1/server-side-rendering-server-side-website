@@ -5,7 +5,7 @@ import express from 'express'
 import fetchJson from './helpers/fetch-json.js'
 
 // Haal data op uit de FDND API, ga pas verder als de data gedownload is
-const data = await fetchJson('https://fdnd.directus.app/items')
+const data = await fetchJson('https://fdnd-agency.directus.app/items/oba_item')
 // console.log(data); // uncomment om de opgehaalde data te checken
 
 // Maak een nieuwe express app aan
@@ -24,6 +24,20 @@ app.get('/', function (request, response) {
   // Render index.ejs uit de views map en geef uit FDND API opgehaalde data mee
   response.render('index', data)
 })
+
+// Maak een GET route voor een detailpagina met een request parameter id
+app.get('/detail/:id', function (request, response) {
+    // Gebruik de request parameter id en haal de juiste persoon uit de WHOIS API op
+    fetchJson('https://fdnd-agency.directus.app/items/oba_item' + request.params.id).then((apiData) => {
+      // Render detail.ejs uit de views map en geef de opgehaalde data mee als variable, genaamd person
+      response.render('detail', {detail: apiData.data } )
+    })
+  })
+
+app.get('/detail/:id', function (request, response) {
+    response.render(303, '/detail/' + request.params.id)
+  })
+
 // Stel het poortnummer in waar express op moet gaan luisteren
 app.set('port', process.env.PORT || 8000)
 
