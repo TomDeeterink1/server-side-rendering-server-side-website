@@ -3,6 +3,9 @@
     flex-direction: column;
     gap: var(--large);
     padding: var(--large);
+    max-width: 1200px;
+    margin: 0 auto;
+    
     & .carousel{
         display: flex;
         flex-direction: row;
