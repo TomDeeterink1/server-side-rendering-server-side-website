@@ -1,0 +1,50 @@
+<section class="carousel--component">
+    <h1>Boeken</h1>
+    <div class="carousel">
+        <% if(data.item_type != "book"){ %>
+            <% data.forEach(book => { %>
+                <div class="card" >
+                    <div class="upper-card">
+                        <img src="https://fdnd-agency.directus.app/assets/<%= book.afbeelding %>" alt="">
+                    </div>
+                    <div class="lower-card">
+                        <a href= "/detail/<%= book.id %>"> <%= book.title %></a>
+                    </div>
+                </div>
+              <% }) %>
+          <% } else{ %>  
+            <h1>bar</h1>
+         <% } %>   
+    </div>
+    <div class="carousel--buttons">
+        <button class="next">previous</button>
+        <button class="previous">next</button>
+    </div>
+    <script>
+        const articles = document.querySelectorAll('.card');
+        const container = document.querySelector('.carousel');
+        const nextButton = document.querySelectorAll('.next');
+        const previousButton = document.querySelectorAll('.previous');
+        
+        nextButton.forEach(button => button.addEventListener('click', () => scrollCarousel(-1)));
+        previousButton.forEach(button => button.addEventListener('click', () => scrollCarousel(1)));
+        
+        function scrollCarousel(direction) {
+            const articleWidth = container.clientWidth;
+            const scrollAmount = direction * articleWidth;
+            const currentScrollPosition = container.scrollLeft;
+        
+            let targetScrollPosition;
+            if (direction === 1) {
+                targetScrollPosition = currentScrollPosition + articleWidth;
+            } else {
+                targetScrollPosition = currentScrollPosition - articleWidth;
+            }
+        
+            container.scrollTo({
+                left: targetScrollPosition,
+                behavior: 'smooth',
+            });
+        }
+    </script>
+</section>
