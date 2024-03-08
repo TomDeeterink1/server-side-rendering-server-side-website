@@ -3,7 +3,7 @@
     flex-direction: column;
     gap: var(--large);
     padding: var(--large);
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     
     & .carousel{
@@ -13,7 +13,7 @@
         overflow-x: scroll;
         scroll-behavior: smooth;
         padding: var(--large)  var(--medium);
-        box-shadow: inset 1px 1px 5px rgb(0 0 0 / 0.2);
+        /* box-shadow: inset 1px 1px 5px rgb(0 0 0 / 0.2); */
         height: max-content;
         border-radius: var(--small);
         & .card{
@@ -39,7 +39,7 @@
                 & img{
                     width: 300px;
                     height: 300px;
-                    object-fit: fill;
+                    object-fit: contain;
                     border-radius: 4px 4px 0px 0px;
                 }
             }
