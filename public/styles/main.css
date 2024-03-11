@@ -71,7 +71,38 @@
     font-weight: 400;
   
   }
+  /* buttons */
+   
+.link{
+  padding: var(--buttons);
+  background-color: var(--main);
+  border-radius: var(--extra-small);
+  font-size: 1em;
+  transition: ease-out 0.1s;
+  transform: scale(100%);
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 
+  &:hover{
+    transition: ease-out 0.1s;
+    transform: scale(95%);
+    cursor: pointer;
+  }
+}
+
+.link-primary{
+  background-color: var(--main);
+  &:hover{
+    color: var(--primary-color);
+  }
+}
+.link-secondary{
+  background-color: var(--primary-color);
+  color: var(--main);
+  &:hover{
+    color: var(--primary-color);
+    background-color: var(--main);
+  }
+}
   /* Fonts being used by the oba */
 @font-face {
   font-family: AvenirRoman;
@@ -369,4 +400,32 @@ body.dark .switch::before{
 }
 body.dark .home .text{
   color: var(--text-color);
+}
+
+@media screen and (min-width: 0px) and (max-width: 600px){
+
+  .sidebar{
+    & .toggle{
+      height: 45px !important;
+      width: 44px !important;
+      right: -45px !important;
+    }
+  }
+  
+  .sidebar.close{
+    width: 0;
+    background: none;
+
+    & .toggle{
+      height: 45px;
+      width: 44px;
+      right: -45px;
+    }
+
+  
+
+    & .image{
+      display: none;
+    }
+  }
 }

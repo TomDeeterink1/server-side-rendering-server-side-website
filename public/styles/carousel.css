@@ -3,8 +3,11 @@
     flex-direction: column;
     gap: var(--large);
     padding: var(--large);
+    padding-left: var(--extra-large);
     max-width: 1400px;
     margin: 0 auto;
+    scroll-snap-type: proximity;
+    scroll-snap-align: left;
     
     & .carousel{
         display: flex;
@@ -82,4 +85,18 @@
         }
     }
 }
-
+@media screen and (min-width: 600px) and (max-width:1200px) {
+    .carousel--component{
+        padding-left: 140px ;
+    }
+}
+@media screen and (min-width: 0px) and (max-width: 600px){
+    .carousel--component{
+        padding: var(--medium);
+        padding-top: 100px;
+        & .carousel{
+            padding-left: var( --extra-small);
+        }
+       
+    }
+}
