@@ -5,32 +5,40 @@
     margin: 0 auto;
     scroll-snap-type: proximity;
     scroll-snap-align: left;
+
     & #goback{
         text-decoration: none;
         color: var(--primary);
+
         &:hover{
             color: var(--primary-color);
         }
     }
+
     & .detail--text-image{
         padding-top: var(--extra-large);
         display: flex;
         flex-direction: row;
         gap: var(--extra-large);
+
         & figure{
+
             & img{
                 height: 600px;
                 border-radius: var(--extra-small);
             }
         }
+
         & article{
             display: flex;
             flex-direction: column;
             gap: var(--medium);
+
             & h1{
                 font-size: 38px;
                 max-width: 600px;
             }
+
             & .text-image--category{
                 list-style-type: none;
                 padding-inline-start: 0px;
@@ -42,16 +50,19 @@
                     color: var(--primary-color);
                 }
             }
+
             & p{
                 max-width: 600px;
                 font-weight: 200 !important;
             }
+
             & div{
                 padding-top: var(--medium);
                 display: flex;
                 flex-direction:  row;
                 gap: var(--medium);
             }
+
             & .text-image--details{
                 list-style-type: none;
                 padding-inline-start: 0px;
@@ -65,6 +76,7 @@
         }
     }
 }
+
 #carousel-detail {
     padding-left: var(--small);
 }
@@ -79,12 +91,15 @@
         margin: 0 auto;
         display: flex;
         flex-direction: column;
+
         & .detail--text-image{
             padding-top: var(--large);
             display: flex;
             flex-direction: column;
             gap: var(--medium);
+
             & figure{
+
                 & img{
                     height: 300px;
                     border-radius: var(--extra-small);
@@ -94,6 +109,7 @@
                 display: flex;
                 flex-direction: column;
                 gap: var(--medium);
+                
                 & h1{
                     font-size: 38px;
                 }

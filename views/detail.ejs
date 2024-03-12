@@ -32,20 +32,20 @@
     <section id="carousel-detail" class="carousel--component">
         <h2>Boeken</h2>
         <% if (items && items.length) { %>
-            <div class="carousel">
+            <ul class="carousel">
                 <% items.forEach(item => { %>
                     <% if (item.item_type === "book") { %>
-                        <div class="card">
+                        <li class="card">
                             <div class="upper-card">
                                 <img src="https://fdnd-agency.directus.app/assets/<%= item.afbeelding %>" alt="">
                             </div>
                             <div class="lower-card">
                                 <a href="/detail/<%= item.id %>"><%= item.title %></a>
                             </div>
-                        </div>
+                        </li>
                     <% } %>
                 <% }) %>
-            </div>
+                    </ul>
         <% } else { %>
             <p>No items found.</p>
         <% } %>
@@ -55,9 +55,4 @@
         </div>
     </section>
 </div>
-
-
-       
-
-
 <%- include('./partials/food') %>
